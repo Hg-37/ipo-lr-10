@@ -8,11 +8,6 @@ def isCorrectRect(coords):
 class RectCorrectError(Exception):
      pass
 def isCollisionRect(rectangles):
-    def is_valid_rect(rect_points, rect_number):
-        (x1, y1), (x2, y2) = rect_points
-        if not (x1 < x2 and y1 < y2):
-            raise RectCorrectError(f"{rect_number}й прямоугольник некоректный")
-    
     rect1, rect2 = rectangles
     try:
         is_valid_rect(rect1, 1)
