@@ -60,6 +60,19 @@ def intersectionAreaRect(rect1, rect2):
         return width * height
     else:
         return 0
+def getIntersection(rect1: list[tuple[float, float]], rect2: list[tuple[float, float]]) -> list[tuple[float, float]]:
+    (x1, y1), (x2, y2) = rect1
+    (x3, y3), (x4, y4) = rect2
+    
+    left = max(x1, x3)
+    right = min(x2, x4)
+    bottom = max(y1, y3)
+    top = min(y2, y4)
+
+    if left < right and bottom < top:
+        return [(left, bottom), (right, top)]
+    else:
+        return None
 
 
 
